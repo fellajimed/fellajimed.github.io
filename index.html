@@ -15,13 +15,15 @@
   </head>
 
   <body>
-    <div class="container-header">
-      <header>
-        <a class="home" href="/"> Mohammed Fellaji </a>
+    <header>
+      <div class="container-header">
+        <div class="home-div"> <a href="/"> Mohammed Fellaji </a> </div>
         
         <div class="menu-nav">
-          <nav>
+          <nav class="navigation">
             <ul class="option">
+              <input type="checkbox" id="collapse" hidden checked>
+              <label class="menu-button" for="collapse"> </label>
               <li class="menu-item"> <a class="section-item" href="/about"> About </a> </li>
               <li class="menu-item"> <a class="section-item" href="/cv"> CV </a> </li>
               <li class="menu-item"> <a class="section-item" href="/publications"> Publications </a> </li>
@@ -30,8 +32,8 @@
             </ul>
           </nav>
         </div>
-      </header>
-    </div>
+      </div>
+    </header>
 
     <main class="content">
       <div class="container">
@@ -99,6 +101,3 @@
 
   </body>
 </html>
-
-
-<!-- my colors: #465566 #4984CC #638ABA #856429 #BA9B63 -->
