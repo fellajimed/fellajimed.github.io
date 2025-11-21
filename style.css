@@ -8,57 +8,38 @@
 }
 
 html {
-    /* Ensure HTML is full height */
     height: 100%;
     width: 100%;
-    /* Set default background in case body fails */
     background-color: #465566;
 }
 
 body {
-    /* FIX: Completely remove default body margin and padding */
     margin: 0;
     padding: 0;
-
-    /* FIX: Ensure body spans at least the full viewport height */
     min-height: 100vh;
-
-    /* FIX: Re-apply background gradient to body */
     background: rgb(70,85,102);
     background: linear-gradient(0deg, #4984CC 0%, #465566 100%);
-
     list-style: none;
 }
 
-/* FIX: Apply your original 40px left/right spacing as PADDING on the body's direct children */
 header, main.content {
-    /* We are keeping 40px of space on the sides for the content */
     padding-right: 40px;
     padding-left: 40px;
-
-    /* Use 100% width to fill the space inside the padding */
     width: 100%;
+}
+
+main.content {
+    padding-bottom: 20px;
 }
 
 header {
     padding-top: 5px;
     padding-bottom: 5px;
+    width: auto;
     position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-/* FIX: Added padding-bottom to the main content container for breathing room */
-main.content {
-    padding-bottom: 20px;
-}
-
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
 }
 
 li {
@@ -79,6 +60,13 @@ section {
     align-items: center;
     text-align:center;
     width: 75%;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
 }
 
 .container-header {
@@ -155,20 +143,18 @@ section {
 }
 
 .socials-wrapper {
-    /* FIX: Ensure the wrapper itself is centered if needed */
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
 .socials-wrapper ul {
-    margin: 0; /* Clear margin */
-    padding: 0; /* Clear padding */
+    margin: 0;
+    padding: 0;
     text-align: center;
 }
 
 .list-socials {
-    /* FIX: Centering logos using flexbox */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -184,6 +170,103 @@ section {
     height: 120px;
 }
 
+#publications {
+    max-width: 85%;
+    margin: auto;
+    width: 100%;
+    text-align: left;
+    flex-direction: column;
+    display: flex;
+}
+
+#publications h1 {
+    text-align: center;
+    color: #BA9B63;
+    margin-bottom: 40px;
+    font-size: 2.2em;
+}
+
+.publication-list {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.publication-item {
+    border: 1px solid #638ABA;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.publication-item h2 {
+    color: #BA9B63;
+    font-size: 1.3em;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.pub-authors {
+    font-style: italic;
+    font-size: 0.9em;
+    color: #ddd;
+    margin-bottom: 5px;
+}
+
+.pub-venue {
+    font-size: 0.9em;
+    color: #aaa;
+    margin-bottom: 15px;
+}
+
+.abstract-checkbox {
+    position: absolute;
+    visibility: hidden;
+}
+
+.abstract-button {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #4984CC;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 600;
+}
+.abstract-button:hover {
+    background-color: #638ABA;
+}
+
+.abstract-button::before {
+    content: "Show Abstract";
+}
+
+.abstract-checkbox:checked + .abstract-button::before {
+    content: "Hide Abstract";
+}
+
+.abstract-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.2s ease-in-out, opacity 0.2s ease-in-out, padding 0.2s ease-in-out;
+}
+.abstract-content p {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed #638ABA;
+    line-height: 1.6;
+    font-size: 0.95em;
+    color: #ccc;
+    margin-bottom: 0;
+}
+
+.abstract-checkbox:checked ~ .abstract-content {
+    max-height: 1000px;
+    opacity: 1;
+    padding-bottom: 10px;
+}
 
 /* --- Media Queries --- */
 
@@ -199,6 +282,10 @@ section {
 
     section {
         width: 90%;
+    }
+
+    #publications {
+        max-width: 100%;
     }
 }
 
