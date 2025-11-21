@@ -1,30 +1,64 @@
-/*  my colors: #465566 #4984CC #638ABA #856429 #BA9B63 */
+/* my colors: #465566 #4984CC #638ABA #856429 #BA9B63 */
 
 * {
     color: #ddd;
     font-family: 'Geologica', sans-serif;
-    font-size: 102%;   
+    font-size: 102%;
+    box-sizing: border-box;
 }
 
 html {
+    /* Ensure HTML is full height */
     height: 100%;
     width: 100%;
+    /* Set default background in case body fails */
+    background-color: #465566;
 }
 
 body {
-    margin-right: 40px;
-    margin-left: 40px;
+    /* FIX: Completely remove default body margin and padding */
+    margin: 0;
+    padding: 0;
+
+    /* FIX: Ensure body spans at least the full viewport height */
+    min-height: 100vh;
+
+    /* FIX: Re-apply background gradient to body */
     background: rgb(70,85,102);
     background: linear-gradient(0deg, #4984CC 0%, #465566 100%);
+
+    list-style: none;
+}
+
+/* FIX: Apply your original 40px left/right spacing as PADDING on the body's direct children */
+header, main.content {
+    /* We are keeping 40px of space on the sides for the content */
+    padding-right: 40px;
+    padding-left: 40px;
+
+    /* Use 100% width to fill the space inside the padding */
+    width: 100%;
 }
 
 header {
-    padding: 5px 0;
-    width: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
     position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+/* FIX: Added padding-bottom to the main content container for breathing room */
+main.content {
+    padding-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
 }
 
 li {
@@ -40,14 +74,14 @@ img{
 section {
     margin-left: auto;
     margin-right: auto;
-    display:table-cell;
-    vertical-align:middle;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align:center;
     width: 75%;
 }
 
 .container-header {
-    /* display: inline-block; */
     display:flex;
     align-items: center;
     width: 100%;
@@ -84,7 +118,7 @@ section {
 
 .navigation {
     float: right;
-    margin-left: auto; 
+    margin-left: auto;
     margin-right: 0;
     padding-left: 5px;
     padding-right: 5px;
@@ -94,23 +128,25 @@ section {
     display: inline-block;
 }
 
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 80px;
-}
-
 .image-profil {
     display: inline-block;
     border-radius: 50%;
     margin: auto;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.image-profil img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .socials li img {
     display: block;
-    max-width: 30px;
-    max-height: 30px;
+    max-width: 40px;
+    max-height: 40px;
     width: auto;
     height: auto;
     padding: 4px;
@@ -118,19 +154,25 @@ section {
     object-fit: contain;
 }
 
+.socials-wrapper {
+    /* FIX: Ensure the wrapper itself is centered if needed */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .socials-wrapper ul {
-    display: contents;
-    margin: auto;
+    margin: 0; /* Clear margin */
+    padding: 0; /* Clear padding */
     text-align: center;
 }
 
-.list-socials ul {
-    margin: auto;
-    display: grid;
-    justify-content: center;
+.list-socials {
+    /* FIX: Centering logos using flexbox */
     display: flex;
+    justify-content: center;
     align-items: center;
-    text-align: center;
+    gap: 10px;
 }
 
 .list-socials li {
@@ -139,17 +181,20 @@ section {
 
 .whatido {
     line-height: 150%;
+    height: 120px;
 }
 
+
+/* --- Media Queries --- */
 
 @media only screen and (max-width: 700px) {
     * {
         font-size: 100%;
     }
 
-    body {
-        margin-right: 5px;
-        margin-left: 5px;
+    header, main.content {
+        padding-right: 5px;
+        padding-left: 5px;
     }
 
     section {
@@ -178,22 +223,22 @@ section {
     }
 
     .option {
-        list-style:none;  
+        list-style:none;
         margin:0;
         padding:0;
         width:150px;
         box-shadow:0 0 3px  #BA9B63,
                 0 0 0 5px rgba(100,100,100,.3);
-        border-radius:5px;  
-        margin:20px;  
+        border-radius:5px;
+        margin:20px;
     }
 
     .option .menu-item {
-        display:block;
-        height:20px;  
+        display:none;
+        height:20px;
         padding:10px;
         color:white;
-        border-top:1px solid rgba(255,255,255,.1);  
+        border-top:1px solid rgba(255,255,255,.1);
     }
 
     .option .menu-item:last-child{
@@ -215,7 +260,6 @@ section {
 
     .menu-button {
         padding: 2px;
-        /* a tmp fix to center menu button */
         padding-bottom: 20px;
     }
 
@@ -225,7 +269,7 @@ section {
     }
 
     #collapse:checked ~ .menu-item{
-        display:none;
-        margin-top:0; 
+        display:block;
+        margin-top:0;
     }
 }
