@@ -77,6 +77,27 @@
 
           <div class="publication-item">
             <div class="pub-details">
+              <h2>On the Calibration of Epistemic Uncertainty: Principles, Paradoxes and Conflictual Loss</h2>
+              <p class="pub-authors">Mohammed Fellaji, Frédéric Pennerath, Brieuc Conan-Guez, Miguel Couceiro</p>
+              <p class="pub-venue">ECML PKDD, 2024</p>
+            </div>
+
+            <input type="checkbox" id="abstract-ecml2024" class="abstract-checkbox" hidden>
+
+            <div class="pub-button-row">
+              <label for="abstract-ecml2024" class="abstract-button"></label>
+              <a href="https://arxiv.org/pdf/2407.12211" class="download-button" target="_blank">Download PDF</a>
+            </div>
+
+            <div class="abstract-content">
+              <p>The calibration of predictive distributions has been widely studied in deep learning, but the same cannot be said about the more specific epistemic uncertainty as produced by Deep Ensembles, Bayesian Deep Networks, or Evidential Deep Networks. Although measurable, this form of uncertainty is difficult to calibrate on an objective basis as it depends on the prior for which a variety of choices exist. Nevertheless, epistemic uncertainty must in all cases satisfy two formal requirements: first, it must decrease when the training dataset gets larger and, second, it must increase when the model expressiveness grows. Despite these expectations, our experimental study shows that on several reference datasets and models, measures of epistemic uncertainty violate these requirements, sometimes presenting trends completely opposite to those expected. These paradoxes between expectation and reality raise the question of the true utility of epistemic uncertainty as estimated by these models. A formal argument suggests that this disagreement is due to a poor approximation of the posterior distribution rather than to a flaw in the measure itself. Based on this observation, we propose a regularization function for deep ensembles, called conflictual loss in line with the above requirements. We emphasize its strengths by showing experimentally that it restores both requirements of epistemic uncertainty, without sacrificing either the performance or the calibration of the deep ensembles.</p>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="publication-item">
+            <div class="pub-details">
               <h2>The Epistemic Uncertainty Hole: an issue of Bayesian Neural Networks</h2>
               <p class="pub-authors">Mohammed Fellaji, Frédéric Pennerath</p>
               <p class="pub-venue">CAp, 2023</p>
@@ -94,26 +115,6 @@
             </div>
           </div>
 
-          <br>
-
-          <div class="publication-item">
-            <div class="pub-details">
-              <h2>On the Calibration of Epistemic Uncertainty: Principles, Paradoxes and Conflictual Loss</h2>
-              <p class="pub-authors">Mohammed Fellaji, Frédéric Pennerath, Brieuc Conan-Guez, Miguel Couceiro</p>
-              <p class="pub-venue">ECML PKDD, 2024</p>
-            </div>
-
-            <input type="checkbox" id="abstract-ecml2024" class="abstract-checkbox" hidden>
-
-            <div class="pub-button-row">
-              <label for="abstract-ecml2024" class="abstract-button"></label>
-              <a href="https://arxiv.org/pdf/2407.12211" class="download-button" target="_blank">Download PDF</a>
-            </div>
-
-            <div class="abstract-content">
-              <p>The calibration of predictive distributions has been widely studied in deep learning, but the same cannot be said about the more specific epistemic uncertainty as produced by Deep Ensembles, Bayesian Deep Networks, or Evidential Deep Networks. Although measurable, this form of uncertainty is difficult to calibrate on an objective basis as it depends on the prior for which a variety of choices exist. Nevertheless, epistemic uncertainty must in all cases satisfy two formal requirements: first, it must decrease when the training dataset gets larger and, second, it must increase when the model expressiveness grows. Despite these expectations, our experimental study shows that on several reference datasets and models, measures of epistemic uncertainty violate these requirements, sometimes presenting trends completely opposite to those expected. These paradoxes between expectation and reality raise the question of the true utility of epistemic uncertainty as estimated by these models. A formal argument suggests that this disagreement is due to a poor approximation of the posterior distribution rather than to a flaw in the measure itself. Based on this observation, we propose a regularization function for deep ensembles, called conflictual loss in line with the above requirements. We emphasize its strengths by showing experimentally that it restores both requirements of epistemic uncertainty, without sacrificing either the performance or the calibration of the deep ensembles.</p>
-            </div>
-          </div>
         </div>
       </div>
     </main>
