@@ -1,4 +1,4 @@
-/* my colors: #465566 #4984CC #638ABA #856429 #BA9B63 */
+    /* my colors: #465566 #4984CC #638ABA #856429 #BA9B63 */
 
 * {
     color: #ddd;
@@ -262,10 +262,35 @@ section {
     margin-bottom: 0;
 }
 
-.abstract-checkbox:checked ~ .abstract-content {
+.abstract-checkbox:checked ~ .pub-button-row ~ .abstract-content {
     max-height: 1000px;
     opacity: 1;
     padding-bottom: 10px;
+}
+
+.pub-button-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.download-button {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #BA9B63;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 600;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.download-button:hover {
+    background-color: #856429;
 }
 
 /* --- Media Queries --- */
