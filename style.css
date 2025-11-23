@@ -195,8 +195,12 @@ section {
     border: 1px solid #638ABA;
     border-radius: 8px;
     padding: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     background-color: rgba(0, 0, 0, 0.1);
+}
+
+.publication-item:last-child {
+    margin-bottom: 0px;
 }
 
 .publication-item h2 {
@@ -242,7 +246,7 @@ section {
     content: "Show Abstract";
 }
 
-.abstract-checkbox:checked + .abstract-button::before {
+.abstract-checkbox:checked ~ .pub-button-row > .abstract-button::before {
     content: "Hide Abstract";
 }
 
@@ -250,7 +254,7 @@ section {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height 0.2s ease-in-out, opacity 0.2s ease-in-out, padding 0.2s ease-in-out;
+    transition: max-height 0.1s ease-in-out, opacity 0.1s ease-in-out, padding 0.1s ease-in-out;
 }
 .abstract-content p {
     margin-top: 15px;
@@ -263,7 +267,7 @@ section {
 }
 
 .abstract-checkbox:checked ~ .pub-button-row ~ .abstract-content {
-    max-height: 1000px;
+    max-height: 2000px;
     opacity: 1;
     padding-bottom: 10px;
 }
